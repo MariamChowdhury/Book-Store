@@ -7,22 +7,22 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 const DeleteProduct = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://agile-mountain-66366.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
-  
-  const handleDelete=(id) => {
-    fetch(`http://localhost:5000/delete/${id}`,{
-      method:'DELETE'
+
+  const handleDelete = (id) => {
+    fetch(`https://agile-mountain-66366.herokuapp.com/delete/${id}`, {
+      method: "DELETE",
     })
-    .then(res => res.json())
-    .then(result => {
-      if(result){
-        alert('Product deleted successfully! Please reload the page')
-      }
-    })
-  }
+      .then((res) => res.json())
+      .then((result) => {
+        if (result) {
+          alert("Product deleted successfully! Please reload the page");
+        }
+      });
+  };
   return (
     <div>
       <Navigation />
@@ -56,7 +56,10 @@ const DeleteProduct = () => {
                   <td>{pd.name}</td>
                   <td>{pd.price}</td>
                   <td>
-                    <button className="btn purple-bg " onClick={() => handleDelete(pd._id)}>
+                    <button
+                      className="btn purple-bg "
+                      onClick={() => handleDelete(pd._id)}
+                    >
                       <DeleteForeverIcon /> Delete{" "}
                     </button>
                   </td>

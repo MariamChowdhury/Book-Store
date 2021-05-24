@@ -1,7 +1,8 @@
-import React from 'react';
-import SideBar from '../SideBar/SideBar';
-import Navigation from '../../Shared/Navigation/Navigation'
-import Footer from '../../Shared/Footer/Footer'
+import React from "react";
+import SideBar from "../SideBar/SideBar";
+import Navigation from "../../Shared/Navigation/Navigation";
+import Footer from "../../Shared/Footer/Footer";
+import DashboardData from "./DashboardData";
 
 const Dashboard = () => {
   return (
@@ -12,7 +13,7 @@ const Dashboard = () => {
           <SideBar />
         </div>
         <div className="col-md-9">
-          All orders
+          <DashboardData />
         </div>
       </div>
       <Footer></Footer>

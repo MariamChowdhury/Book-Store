@@ -1,16 +1,19 @@
-.purple-color{
-  color:#350b40
+.purple-color {
+  color: #350b40;
 }
-.purple-bg,.purple-bg:hover{
-background-color: #350b40;
-color:white
+.purple-bg,
+.purple-bg:hover {
+  background-color: #350b40;
+  color: white;
 }
-a,a:hover{
-  color:white;
+a,
+a:hover {
+  color: white;
   text-decoration: none;
 }
-.nav-link, .nav-link:hover{
-  color:white;
+.nav-link,
+.nav-link:hover {
+  color: white;
   text-decoration: none;
   font-weight: bold;
 }
@@ -20,14 +23,14 @@ a,a:hover{
 
 .custom-toggler.navbar-toggler {
   border-color: white;
-} 
+}
 
-.footer-container{
+.footer-container {
   background-color: #350b40;
 }
 
 .sidebar-container {
-  background-color:#350b40;
+  background-color: #350b40;
   height: 100vh;
 }
 .sidebar-content {
@@ -37,6 +40,6 @@ a,a:hover{
   color: white;
 }
 
-img{
+img {
   height: 14rem;
 }

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import React, { useState } from "react";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { Link } from "react-router-dom";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -13,8 +14,8 @@ const CheckoutForm = () => {
       return;
     }
     const cardElement = elements.getElement(CardElement);
-    const {error, paymentMethod} = await stripe.createPaymentMethod({
-      type: 'card',
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: "card",
       card: cardElement,
     });
 
@@ -30,17 +31,25 @@ const CheckoutForm = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-      <CardElement />
-      <button type="submit" className='btn purple-color my-3 btn-outline-info' disabled={!stripe}>
-        Pay
-      </button>
-    </form>
-    {paymentError && <h5 style={{ color: "red" }}>{paymentError} </h5>}
+        <CardElement />
+        <button
+          type="submit"
+          className="btn purple-color my-3 btn-outline-info"
+          disabled={!stripe}
+        >
+          Pay
+        </button>
+      </form>
+      {paymentError && <h5 style={{ color: "red" }}>{paymentError} </h5>}
       {paymentSuccess && (
-        <h5 style={{ color: "green" }}>Payment successful!Go back to buy more!!</h5>
+        <div>
+          <h5 style={{ color: "green" }}>Payment successful!</h5>
+          <Link to="/home">
+            <button className="btn purple-bg">Go Back</button>
+          </Link>
+        </div>
       )}
     </div>
-    
   );
 };
 

@@ -19,8 +19,7 @@ const AddProduct = () => {
       price: data.price,
       imageURL: imageURL,
     };
-console.log(formData);
-    const url = `http://localhost:5000/addProduct`;
+    const url = `https://agile-mountain-66366.herokuapp.com/addProduct`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -37,12 +36,12 @@ console.log(formData);
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
         setImageURL(response.data.data.display_url);
+        console.log(imageData);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
-  
   return (
     <div>
       <Navigation></Navigation>
